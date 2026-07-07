@@ -33,7 +33,13 @@ uv sync
 
 ## Configuration
 
-Create `.env`:
+Create `.env` from the example:
+
+```bash
+cp .env.example .env
+```
+
+Then edit values as needed:
 
 ```env
 MODEL_NAME=Qwen/Qwen2.5-0.5B-Instruct
@@ -108,3 +114,7 @@ Core files for this workflow:
 - Never commit `.env` or tokens.
 - Treat OAuth auth codes as sensitive.
 - Cloudflare quick tunnel URL is public; local proxy binds to `127.0.0.1`.
+
+## Contributing
+
+See [CONTRIBUTING.md](/media/sacsresta/48F9473C7383F9492/vllm_colab/CONTRIBUTING.md).
