@@ -6,6 +6,20 @@ dist/
 wheels/
 *.egg-info
 
-# Virtual environments
+# Virtual environments and secrets
 .venv
 .env
+
+# Local deploy runtime state
+.colab_state/
+.local-vllm-proxy.pid
+local-vllm-proxy.log
+vllm.log
+
+# Local editor/project state
+*.code-workspace
+
+# Legacy local helper scripts (not part of release workflow)
+colab.sh
+bash_colab.sh
+local.sh
