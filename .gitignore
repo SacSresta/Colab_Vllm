@@ -23,3 +23,6 @@ vllm.log
 colab.sh
 bash_colab.sh
 local.sh
+
+# Local marketing planning docs
+marketing-docs/
