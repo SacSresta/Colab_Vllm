@@ -52,6 +52,8 @@ MAX_MODEL_LEN=8192
 Optional:
 
 - `HF_TOKEN` for gated/private Hugging Face models.
+- `ENABLE_KV_OFFLOADING=true` to opt in to KV offloading flags.
+- `ENABLE_AUTO_TOOL_CHOICE=true` and `TOOL_CALL_PARSER=qwen25` if your client sends `tool_choice: "auto"` (function/tool calling).
 
 ## Quick Start
 
@@ -106,6 +108,8 @@ Core files for this workflow:
   Colab origin is not reachable yet. Check `/content/vllm.log` and `/content/cloudflared-vllm.log` in Colab.
 - `ImportError: libcudart.so.13`:
   CUDA runtime mismatch. The deploy flow now installs runtime libs and sets `LD_LIBRARY_PATH` automatically.
+- `Engine core initialization failed` with `CUDA error: out of memory`:
+  lower `MAX_MODEL_LEN` (for example `8192` or `4096`) and/or lower `GPU_MEMORY_UTILIZATION` (for example `0.75`). Keep `ENABLE_KV_OFFLOADING=false` unless you explicitly need it.
 - `colab console` cannot find session:
   use `bash access.sh console` instead of plain `colab console`.
 

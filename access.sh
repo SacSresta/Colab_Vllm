@@ -28,6 +28,7 @@ Usage:
   bash access.sh sessions
   bash access.sh status [SESSION]
   bash access.sh console [SESSION]
+  bash access.sh stop [SESSION]
   bash access.sh exec [SESSION] -- <code>
   bash access.sh raw <colab-args...>
 
@@ -50,6 +51,10 @@ case "$cmd" in
   console)
     session="${1:-vllm-colab}"
     run_colab console --session "$session"
+    ;;
+  stop)
+    session="${1:-vllm-colab}"
+    run_colab stop --session "$session"
     ;;
   exec)
     session="${1:-vllm-colab}"
@@ -76,4 +81,3 @@ case "$cmd" in
     exit 1
     ;;
 esac
-
