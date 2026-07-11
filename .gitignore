@@ -19,6 +19,8 @@ vllm.log
 # Local editor/project state
 *.code-workspace
 
+.history
+
 # Legacy local helper scripts (not part of release workflow)
 colab.sh
 bash_colab.sh
